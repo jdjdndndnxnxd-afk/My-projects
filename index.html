@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل الدخول</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;background:linear-gradient(135deg,#0a0a0a,#1a1a1a);display:flex;justify-content:center;align-items:center;height:100vh;color:#fff;}
+.container{background:rgba(52,152,219,0.1);padding:40px;border-radius:20px;box-shadow:0 0 30px rgba(52,152,219,0.4);width:320px;text-align:center;}
+h2{color:#3498db;margin-bottom:20px;text-shadow:0 0 8px #3498db;}
+input{width:100%;padding:12px 15px;margin:10px 0;border-radius:10px;border:1px solid #3498db;background:rgba(0,0,0,0.3);color:#fff;font-size:1em;transition:0.3s;}
+input:focus{border:2px solid #9b59b6;outline:none;box-shadow:0 0 10px #9b59b6;}
+button{width:100%;padding:12px;margin-top:15px;border:none;border-radius:10px;background:#9b59b6;color:#fff;font-weight:bold;font-size:1em;cursor:pointer;transition:0.3s;}
+button:hover{background:#8e44ad;transform:scale(1.05);box-shadow:0 0 15px #9b59b6;}
+.message{margin-top:10px;font-size:0.9em;}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>تسجيل الدخول</h2>
+<form id="loginForm">
+<input type="text" id="username" placeholder="اسم المستخدم" required>
+<input type="password" id="password" placeholder="كلمة المرور" required>
+<button type="submit">دخول</button>
+<div class="message" id="message"></div>
+</form>
+</div>
+
+<script>
+const form=document.getElementById('loginForm');
+const message=document.getElementById('message');
+form.addEventListener('submit',function(e){
+e.preventDefault();
+const user=form.username.value.trim();
+const pass=form.password.value.trim();
+if(user==="admin" && pass==="1234"){
+message.style.color="#00ff00";
+message.textContent="تم تسجيل الدخول!";
+}else{
+message.style.color="#ff5555";
+message.textContent="خطأ في البيانات!";
+}
+});
+</script>
+</body>
+</html>
