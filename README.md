@@ -1,2 +1,1 @@
-# My-projects
-This repository has all my projects you can see.
+Hello, here you can see all the works of websites and Telegram bots. Enjoy, dear.
